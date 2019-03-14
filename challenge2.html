@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+  <title>Challenge Two</title>
+  <style>
+      /*    Nunez, Priscilla
+          Date: 4/22/19 
+          Assignment: Challenges
+          Lecturer: Dr.Colleen Van Lent
+          YOUR CSS CODE HERE */ 
+  </style>
+    
+    <script>
+	   function setHomeAddress(event){
+      // YOUR  JavaScript CODE HERE
+      var homeAdd = document.getElementById("home");
+      var billingAdd = document.getElementById("billing");
+      if(event.target.checked){
+        homeAdd.value = billingAdd.value;
+        homeAdd.disabled = true;
+      }else{
+        homeAdd.value = ""
+        homeAdd.disabled = false;
+      }
+     }
+    </script>
+</head>
+<body>
+    <h1>Challenge Two</h1>
+    <form action="challenge3.html">
+      <fieldset>
+        <legend>Billing Information</legend>
+        <div>
+          <label for ="billing">Billing Address:</label><br>
+          <textarea name="billingAdd" id="billing"></textarea>
+        </div>
+
+        <div>
+          <label for ="home">Home Address:</label><br>
+          <input type="checkbox" name="useBilling" onclick = "setHomeAddress(event)" id="useBilling"> Same as above <br>
+        <textarea name="homeAdd" id="home"></textarea>
+        </div>
+        <input type = "submit" value = "Go To Challenge 3">
+      </fieldset>
+      </form>
+</body>
+</html>

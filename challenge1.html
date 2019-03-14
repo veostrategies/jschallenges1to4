@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>JavaScript Challenges</title>
+    <style>
+    /*    Nunez, Priscilla
+          Date: 3/10/19 
+          Assignment: Challenges
+          Lecturer: Dr.Colleen Van Lent
+          */ 
+    </style>
+    
+    <script>
+      // alert("hi DVL")
+      // console.log("hi there")
+      // const name = ("What is your name")
+
+
+    function toggleEmail(event){
+      /*    YOUR JavaScript CODE HERE */ 
+      var emailParagraph = document.getElementById("emailfield")
+      if(event.target.checked){
+        emailParagraph.style.display = "block"
+      }else{
+        emailParagraph.style.display = "none"
+      }
+    } 
+    </script>
+  </head>
+  <body>
+    <h1>Challenge One</h1>
+    <form action="challenge2.html">
+      <fieldset>
+        <legend>Email subscriptions</legend>
+        <div id="check">
+          <label>
+            <input type="checkbox" name="subscribe" id="subscribe" onchange="toggleEmail(event)">
+            Check to toggle the email field.
+          </label>
+        </div>
+
+        <div id="emailfield" style="display: none">
+          <label>
+            Email Address: 
+            <input type="text" name="email" id="email">
+          </label>
+        </div>
+
+        <input type = "submit" value = "Go To Challenge 2">
+      </fieldset>
+    </form>
+  </body>
+</html>

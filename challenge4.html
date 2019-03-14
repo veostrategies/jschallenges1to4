@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Challenge 5</title>
+	<style>
+	body{
+		margin: 2%;
+		border: 1px solid black;
+		background-color: #b3b3b3;
+	}
+	#image{
+    	line-height:325px;
+		width: 388px;
+    	height: 325px;
+		border:5px solid black;
+		margin:0 auto;
+    	background-repeat: no-repeat;
+    	color:#FFFFFF;
+    	text-align: center;
+    	background-color: #8e68ff;
+    	background-size: 100%;
+    	margin-bottom:25px;
+    	font-size:150%;
+	}
+	.preview{
+		width:10%;
+		margin-left:17%;
+    	border: 10px solid black;
+	}
+	img{
+		width:95%;
+	}
+	h1{
+		text-align: center;
+	}
+	</style>
+
+	<script>
+	let textContent
+	// I used Two functions here.  Starter idea at: 
+	// https://codepen.io/ColleenEMc/pen/XmZzWw
+	function onMouseEnter(event){
+		var image = document.getElementById('image');
+		if(!textContent){
+			textContent = image.textContent;
+		}
+		image.style.backgroundImage = "url(" + event.target.src + ")";
+        image.style.color = "white";
+        image.style.fontSize = "30px"
+		image.textContent = event.target.alt;
+	}
+
+	function onMouseLeave(event){
+		var image = document.getElementById('image');
+		image.textContent = textContent
+		image.style.backgroundImage = ""
+	}
+	</script>
+</head>
+
+<body>
+	<h1>Challenge 5</h1>
+		<div id = "image">
+			Hover or tab over/into an image below.
+		</div>
+
+		<!-- Your code goes in the img tag below.  Make sure to react to "hovering" and "tabbing": -->
+		<img onmouseover="onMouseEnter(event)" onmouseout="onMouseLeave(event)" class = "preview" 
+			alt = "Styling with a Bandana" 
+			src = "https://s3-us-west-2.amazonaws.com/s.cdpn.io/389177/bacon.jpg">
+
+
+		<!-- Your code goes in the img tag below.  Make sure to react to "hovering" and "tabbing": -->	
+		<img onmouseover="onMouseEnter(event)" onmouseout="onMouseLeave(event)" class = "preview" 
+			alt = "With My Boy" 
+			src = "https://s3-us-west-2.amazonaws.com/s.cdpn.io/389177/bacon2.JPG">
+	
+		<!-- Your code goes in the img tag below.  Make sure to react to "hovering" and "tabbing": -->
+		<img onmouseover="onMouseEnter(event)" onmouseout="onMouseLeave(event)" class = "preview" tabindex = "1" 
+			src = "https://s3-us-west-2.amazonaws.com/s.cdpn.io/389177/bacon3.jpg" 
+			alt = "Young Puppy">
+		<!-- image 3 -->
+		<img onmouseover="onMouseEnter(event)" onmouseout="onMouseLeave(event)" class = "preview" 
+			alt = "Tech Shoes" 
+			src = "https://mondrian.mashable.com/uploads%252Fcard%252Fimage%252F937690%252Fb95de23b-0243-427f-b29d-c4db7c2f21fe.jpg%252F950x534__filters%253Aquality%252890%2529.jpg?signature=ebXDFhI9hj9LuMYYjtB8pYjGGIw=&source=https%3A%2F%2Fblueprint-api-production.s3.amazonaws.com">
+		<!-- image 4  -->
+		<img onmouseover="onMouseEnter(event)" onmouseout="onMouseLeave(event)" class = "preview" 
+			alt = "Angry Dog" 
+			src = "https://cdn.pixabay.com/photo/2018/05/07/10/48/husky-3380548__340.jpg">
+		<!-- image 5 -->
+		<img onmouseover="onMouseEnter(event)" onmouseout="onMouseLeave(event)" class = "preview" tabindex = "1" 
+			src = "http://superiorfacts.com/wp-content/uploads/2017/12/African-frogs-are-the-best-jumpers-in-the-frog-world..jpg" 
+			alt = " Green Frog">
+
+
+</body>
+</html>
