@@ -35,28 +35,6 @@
 		text-align: center;
 	}
 	</style>
-
-	<script>
-	let textContent
-	// I used Two functions here.  Starter idea at: 
-	// https://codepen.io/ColleenEMc/pen/XmZzWw
-	function onMouseEnter(event){
-		var image = document.getElementById('image');
-		if(!textContent){
-			textContent = image.textContent;
-		}
-		image.style.backgroundImage = "url(" + event.target.src + ")";
-        image.style.color = "white";
-        image.style.fontSize = "30px"
-		image.textContent = event.target.alt;
-	}
-
-	function onMouseLeave(event){
-		var image = document.getElementById('image');
-		image.textContent = textContent
-		image.style.backgroundImage = ""
-	}
-	</script>
 </head>
 
 <body>
@@ -66,32 +44,56 @@
 		</div>
 
 		<!-- Your code goes in the img tag below.  Make sure to react to "hovering" and "tabbing": -->
-		<img onmouseover="onMouseEnter(event)" onmouseout="onMouseLeave(event)" class = "preview" 
+		<img onmouseover="enter(event)" onfocus="enter(event)" onblur="leave(event)" onmouseout="leave(event)" class = "preview" tabindex ="1"
 			alt = "Styling with a Bandana" 
 			src = "https://s3-us-west-2.amazonaws.com/s.cdpn.io/389177/bacon.jpg">
 
 
 		<!-- Your code goes in the img tag below.  Make sure to react to "hovering" and "tabbing": -->	
-		<img onmouseover="onMouseEnter(event)" onmouseout="onMouseLeave(event)" class = "preview" 
+		<img onmouseover="enter(event)" onfocus="enter(event)" onblur="leave(event)" onmouseout="leave(event)" class = "preview" tabindex ="2"
 			alt = "With My Boy" 
-			src = "https://s3-us-west-2.amazonaws.com/s.cdpn.io/389177/bacon2.JPG">
+			src = "https://s3-us-west-2.amazonaws.com/s.cdpn.io/389177/bacon2.JPG"> 
 	
 		<!-- Your code goes in the img tag below.  Make sure to react to "hovering" and "tabbing": -->
-		<img onmouseover="onMouseEnter(event)" onmouseout="onMouseLeave(event)" class = "preview" tabindex = "1" 
+		<img onmouseover="enter(event)" onfocus="enter(event)" onblur="leave(event)" onmouseout="leave(event)" class = "preview" tabindex ="3" 
 			src = "https://s3-us-west-2.amazonaws.com/s.cdpn.io/389177/bacon3.jpg" 
 			alt = "Young Puppy">
 		<!-- image 3 -->
-		<img onmouseover="onMouseEnter(event)" onmouseout="onMouseLeave(event)" class = "preview" 
+		<img onmouseover="enter(event)" onfocus="enter(event)" onblur="leave(event)" onmouseout="leave(event)" class = "preview" tabindex="4"
 			alt = "Tech Shoes" 
 			src = "https://mondrian.mashable.com/uploads%252Fcard%252Fimage%252F937690%252Fb95de23b-0243-427f-b29d-c4db7c2f21fe.jpg%252F950x534__filters%253Aquality%252890%2529.jpg?signature=ebXDFhI9hj9LuMYYjtB8pYjGGIw=&source=https%3A%2F%2Fblueprint-api-production.s3.amazonaws.com">
 		<!-- image 4  -->
-		<img onmouseover="onMouseEnter(event)" onmouseout="onMouseLeave(event)" class = "preview" 
+		<img onmouseover="enter(event)" onfocus="enter(event)" onblur="leave(event)" onmouseout="leave(event)" class = "preview" tabindex="5"
 			alt = "Angry Dog" 
 			src = "https://cdn.pixabay.com/photo/2018/05/07/10/48/husky-3380548__340.jpg">
 		<!-- image 5 -->
-		<img onmouseover="onMouseEnter(event)" onmouseout="onMouseLeave(event)" class = "preview" tabindex = "1" 
+		<img onmouseover="enter(event)" onfocus="enter(event)" onblur="leave(event)" onmouseout="leave(event)" class = "preview" tabindex ="6" 
 			src = "http://superiorfacts.com/wp-content/uploads/2017/12/African-frogs-are-the-best-jumpers-in-the-frog-world..jpg" 
-			alt = " Green Frog">
+            alt = " Green Frog">
+            
+<script>
+        let textContent
+        // I used Two functions here.  Starter idea at: 
+        // https://codepen.io/ColleenEMc/pen/XmZzWw
+        function enter(event){
+            var image = document.getElementById('image');
+            if(!textContent){
+                textContent = image.textContent;
+            }
+            image.style.backgroundImage = "url(" + event.target.src + ")";
+            image.style.color = "white";
+            image.style.fontSize = "30px";
+            image.style.backgroundSize = "100% 100%";
+            image.style.backgroundRepeat = "no-repeat";
+            image.textContent = event.target.alt;
+        }
+    
+        function leave(event){
+            var image = document.getElementById('image');
+            image.textContent = textContent
+            image.style.backgroundImage = ""
+        }
+        </script>
 
 
 </body>

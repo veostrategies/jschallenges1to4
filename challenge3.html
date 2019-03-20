@@ -16,8 +16,31 @@
     	color:red;
     	display:none; } 
     </style>
+</head>
+
+<body>
+    <h1>Challenge 3</h1>
+    <form action="challenge4.html" onsubmit="return checkForm();">
+        <fieldset>
+            <legend>Personal details</legend>
+            <label for="fullname">Full name: </label>
+            <input type="text" name="fullname" id="fullname" oninput="handleChange('nameerrormsg')"><br />
+            <p class="errormsg" id="nameerrormsg">Please enter your name above!</p>
+
+            <label for="streetaddr"></label>
+            Street Address:
+            <input type="text" name="streetaddr" id="streetaddr" oninput="handleChange('addrerrormsg')">
+            <p class="errormsg" id="addrerrormsg">Please enter your street address!</p>
+        </fieldset>
+        <input type="submit" value="Submit it!">
+    </form>
 
     <script>
+        function handleChange(id) {
+            const element = document.getElementById(id)
+            element.style.display = "none";
+        }
+
         function checkForm() {
             // Write a function that displays the appropriate error message(s) if a field is left blank.  Make sure the form action is not performed if either field is blank.
             var fullname = document.getElementById("fullname");
@@ -45,24 +68,6 @@
             
         }
     </script>
-</head>
-
-<body>
-    <h1>Challenge 3</h1>
-    <form action="challenge4.html" onsubmit="return checkForm();">
-        <fieldset>
-            <legend>Personal details</legend>
-            <label for="fullname">Full name: </label>
-            <input type="text" name="fullname" id="fullname"><br />
-            <p class="errormsg" id="nameerrormsg">Please enter your name above!</p>
-
-            <label for="streetaddr"></label>
-            Street Address:
-            <input type="text" name="streetaddr" id="streetaddr">
-            <p class="errormsg" id="addrerrormsg">Please enter your street address!</p>
-        </fieldset>
-        <input type="submit" value="Submit it!">
-    </form>
 </body>
 
 </html>
